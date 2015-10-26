@@ -40,6 +40,10 @@ import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.*;
 
+/**
+ * Bench about finding last element of a sequence according to an arbitrary criteria.
+ * we wanna test this very specific case of the element being near the end of the sequence.
+ */
 @State(Scope.Thread)
 public class MyBenchmark {
 
@@ -49,7 +53,7 @@ public class MyBenchmark {
 
     @Setup
     public void init() {
-        this.deque = new ArrayDeque<String>();
+        this.deque = new ArrayDeque<>();
         this.stack = new Stack<>();
         this.list = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
